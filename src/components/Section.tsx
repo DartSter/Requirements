@@ -1,18 +1,14 @@
-import React from 'react'
-import { useState } from 'react'
+import React from "react";
+import { useState } from "react";
 
+const Section: React.FC = () => {
+  const [visibility, setVisibility] = useState(false);
 
-const Section:React.FC = (section:any) => {
-    const [visibility, setVisibility] = useState(false)
-  
-    const showSection = ():void=> setVisibility(!visibility)
+  const showSection = (): void => setVisibility(!visibility);
 
-    return (
-        <div onClick={showSection}>
-            {visibility && section}
-        </div>
-  )
-}
+    return <div  className='text-center' >
+        <p onClick={showSection}>click</p>
+        {visibility && <div>видно</div>}</div>;
+};
 
-
-export default Section
+export default Section;
